@@ -5,6 +5,8 @@
 footer.bottom {
     background-color: $black;    
     margin-top: 5em;
+    padding-top: 3em;
+    
 
     .inner {
         @include outer-container;
@@ -15,6 +17,14 @@ footer.bottom {
             position:relative;
             height: 10em;
             
+            div.left-pad, nav.footer-page-nav, ul.footer-social {
+                @include span-columns(4);
+            }
+
+            li {
+                margin-top: 1rem;
+            }
+
             div.footer-text-container {
                 position: absolute;
                 right: 5%;

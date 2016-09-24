@@ -19,10 +19,6 @@ section.contact {
         }
 
         label {
-            // display: block;
-            // margin-bottom: .5em;
-            // margin-top: 1em;
-            // color: $black;
             color: #9e9e9e;
             position: absolute;
             top: 0.8rem;
@@ -31,18 +27,18 @@ section.contact {
             transition: .2s ease-out;
         }
 
-        input, textarea {
-            // width: 100%;
-            // border-bottom: 1px solid $black;
-            // -webkit-appearance: none;
-            // outline: none;
-            // box-shadow: none !important;
-            // background: $white;
+        .input-field.textarea {
+            height: 100px;
+            padding-top: 20px;
         }
 
-        input {
-            // height: 2em;
-            // padding: .5em;
+        a.btn.submit {
+            float: right;
+        }
+
+        li {
+            display: inline-block;
+            margin-right: 2em;
         }
     }
 }

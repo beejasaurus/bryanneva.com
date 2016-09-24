@@ -17,9 +17,10 @@
                 </div>            
             </div>
             <nav class="page-nav">
-                <ul>
-                    <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">Contact</a></li>
+                <ul class="left">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -28,25 +29,36 @@
 
 <section class="container">    
     
-    <section class="portfolio">
-        <h2>Portfolio</h2>
+    <section class="portfolio" id="portfolio">
+        <header>
+            <h2>
+                Portfolio
+                <nav class="sub-nav">
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </h2>   
+        </header>
+
         <div class="portfolio-selected-categories">
             <!-- <label for="selected-categories">Filters</label> -->
             <div class="chip">
                 PHP
-                <i class="close material-icons">close</i>
+                <!-- <i class="close material-icons">close</i> -->
             </div>                        
             <div class="chip">
                 JS
-                <i class="close material-icons">close</i>
+                <!-- <i class="close material-icons">close</i> -->
             </div>                        
         </div>
         <nav class="portfolio-categories">
             <ul>
-                <li>PHP</li>
-                <li>JavaScript</li>
-                <li>Design</li>
-                <li>Continuous Integration</li>
+                <li><a href="#" class="portfolio-category-filter">PHP</a></li>
+                <li><a href="#" class="portfolio-category-filter">JavaScript</a></li>
+                <li><a href="#" class="portfolio-category-filter">Design</a></li>
+                <li><a href="#" class="portfolio-category-filter">Continuous Integration</a></li>
             </ul>
         </nav>
         <section class="portfolio-items">
@@ -102,7 +114,6 @@
                         <li><a href="#">Code</a></li>
                         <li><a href="#">Screenshot</a></li>
                     </ul>
-                    
                 </div>
             </div>
 
@@ -223,11 +234,25 @@
             </div>
         </section>
     </section>
-    <section class="contact">
-        <h2>Contact</h2>
+
+    <div class="back-to-top">
+        <a href="#">Back to top</a>
+    </div>
+
+    <section class="contact" id="contact">
+        <header>
+            <h2>
+                Contact
+                <nav class="sub-nav">
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                    </ul>
+                </nav>
+            </h2>    
+        </header>       
 
         <section>
-
             <div class="input-field">
                 <input type="text" />
                 <label for="email">Name</label>
@@ -238,9 +263,13 @@
                 <label for="email">E-Mail</label>
             </div>
 
-            <div class="input-field">
-                <textarea name="message" id="message" cols="30" rows="10"></textarea>
+            <div class="input-field textarea">
+                <textarea name="message" id="message"></textarea>
                 <label for="message">Message</label>
+            </div>
+
+            <div class="input-field btn">
+                <a href="#" class="btn submit">Send</a>
             </div>
             
         </section>
@@ -248,21 +277,36 @@
             &nbsp;
         </section>
         <section>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <p>LinkedIn, GitHub</p>
+            <h3>About Me</h3>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.</p>
+            <ul>
+                <li><a href="#">LinkedIn</a></li>
+                <li><a href="#">GitHub</a></li>
+            </ul>
         </section>
     </section>
+
+    <div class="back-to-top">
+        <a href="#">Back to top</a>
+    </div>
 </section>
 
 <footer class="bottom">
     <section class="inner">
         <div class="footer-content">
-            <div class="footer-text-container">Footer</div>
+            <div class="left-pad">&nbsp;</div>
+            <nav class="footer-page-nav">
+                <ul>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>    
+            </nav>
+
+            <ul class="footer-social">
+                <li><a href="#">LinkedIn</a></li>
+                <li><a href="#">GitHub</a></li>
+            </ul>
         </div>
     </section>
 </footer>

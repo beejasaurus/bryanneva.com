@@ -11,6 +11,7 @@ nav.page-nav {
         list-style-type: none;
         margin: 0;
         padding: 0;
+        // border-bottom: 1px dotted #9e9e9e;
     }
 
     li {
@@ -20,7 +21,7 @@ nav.page-nav {
         // float: right;
         height: 40px;
         line-height: 40px;
-        border-top: 3px solid $backgroundColorLight;
+        border-bottom: 3px solid $backgroundColorLight;
 
         a {
             color: $whiteLight;
@@ -34,6 +35,10 @@ nav.page-nav {
     }
 
     li:hover {
-        border-top: 3px solid $whiteLight;
+        border-bottom: 3px solid $whiteLight;
+    }
+
+    li.right {
+        float: right;
     }
 }

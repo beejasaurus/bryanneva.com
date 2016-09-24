@@ -1,0 +1,36 @@
+@import 'bourbon';
+@import 'neat';
+@import '_variables';
+
+footer.bottom {
+    background-color: $black;    
+    margin-top: 5em;
+
+    .inner {
+        @include outer-container;
+
+        div.footer-content {
+            @include span-columns(12);
+            
+            position:relative;
+            height: 10em;
+            
+            div.footer-text-container {
+                position: absolute;
+                right: 5%;
+                bottom: 10%;
+                color: $white;
+            }
+
+            h1 {
+                margin:0;
+                padding:0;
+            }
+
+            div.social {
+                float:right;
+            }    
+        }       
+    }
+}
+

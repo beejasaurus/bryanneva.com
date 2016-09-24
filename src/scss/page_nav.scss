@@ -1,0 +1,39 @@
+@import 'bourbon';
+@import 'neat';
+@import '_variables';
+
+nav.page-nav {
+    position: relative;
+    height: 40px;
+    padding-top: 2em;
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    li {
+        display: inline-block;
+        padding: 0 2em 0 2em;
+        margin:0;
+        // float: right;
+        height: 40px;
+        line-height: 40px;
+        border-top: 3px solid $backgroundColorLight;
+
+        a {
+            color: $whiteLight;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: $whiteDark;
+
+        }
+    }
+
+    li:hover {
+        border-top: 3px solid $whiteLight;
+    }
+}

@@ -1,0 +1,123 @@
+@import 'bourbon';
+@import 'neat';
+@import '_variables';
+@import 'chips';
+
+section.portfolio {
+    @include outer-container;
+    
+    padding-top: 3em;
+
+    div.portfolio-selected-categories {
+        float: right;
+        // margin-right:
+    }
+
+    nav { 
+        @include span-columns(3); 
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            padding-left: 10px;
+            color: $black;
+            height: 40px;
+            line-height: 40px;
+            border-left: 3px solid $whiteLight;
+        }
+
+        li:hover {
+            border-left: 3px solid $backgroundColorDark;
+        }
+    }
+    
+    section {
+        @include span-columns(9);
+    }
+}
+
+section.portfolio-items {
+    @include outer-container;
+    $imgPadding: 100px;
+
+    div.portfolio-item {
+        // @include size(20em);
+        // @include span-columns(4);
+        width: 48%;
+        height: 15em;
+        min-height: 1px;
+        float: left;        
+        // border: $border;
+        // padding: 0 1em 0 1em;
+        margin: 0.5rem 1rem 1rem 0;
+        transition: box-shadow .25s;
+        box-shadow: 0 2px 5px 0;
+        border-radius: 2px;
+        position: relative;
+        // background-color: #546e7a;
+        // color: #fff;
+        // background-color: $baseColorLight;
+        padding-right: $imgPadding;
+    }
+
+    div.portfolio-image {
+        position: absolute;
+        right: 0;
+    }
+
+    div.portfolio-categories {
+        float: right;
+        margin-top: 2rem;
+        margin-right: 1rem;
+    }
+
+    div.portfolio-header {
+        // position: absolute;
+        // top: 0.5rem;
+        padding: 1em;
+        margin: 0;
+        // padding-right: $imgPadding;
+
+        h3 {}    
+    }
+    
+    div.portfolio-description {
+        padding: 1rem;
+        // padding-right: $imgPadding;
+    }
+    
+    div.portfolio-actions {
+        position: absolute;
+        bottom: 0.5rem;
+        border-top: 1px solid rgba(160,160,160,0.2);
+        padding: 20px;
+        // width: 100%;
+        width: 319.67px;
+        // color: $white;
+        
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            display: inline-block;
+            margin-right: 2rem;
+        }
+
+        a {
+            color: $baseColor;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            color: $baseColorDark;
+        }
+    }
+}

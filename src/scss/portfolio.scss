@@ -45,22 +45,15 @@ section.portfolio-items {
     $imgPadding: 100px;
 
     div.portfolio-item {
-        // @include size(20em);
-        // @include span-columns(4);
         width: 48%;
         height: 15em;
         min-height: 1px;
         float: left;        
-        // border: $border;
-        // padding: 0 1em 0 1em;
         margin: 0.5rem 1rem 1rem 0;
         transition: box-shadow .25s;
         box-shadow: 0 2px 5px 0;
         border-radius: 2px;
         position: relative;
-        // background-color: #546e7a;
-        // color: #fff;
-        // background-color: $baseColorLight;
         padding-right: $imgPadding;
     }
 
@@ -76,13 +69,12 @@ section.portfolio-items {
     }
 
     div.portfolio-header {
-        // position: absolute;
-        // top: 0.5rem;
         padding: 1em;
         margin: 0;
-        // padding-right: $imgPadding;
-
-        h3 {}    
+        
+        h3 {
+            cursor: pointer;
+        }    
     }
     
     div.portfolio-description {

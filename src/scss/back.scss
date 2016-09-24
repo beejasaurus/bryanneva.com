@@ -1,0 +1,11 @@
+.back-to-top {
+    float: right;
+    margin-top: 4rem;
+    margin-bottom: 5rem;
+    font-size: 0.7rem;
+    font-weight: lighter;
+
+    a {
+        font-color: $baseColorLight;
+    }
+}

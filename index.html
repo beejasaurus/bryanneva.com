@@ -4,8 +4,10 @@
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway|Roboto" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.css" />
+    <script src="https://use.fontawesome.com/6c5a74a960.js"></script>
 </head>
 <body>
+
 
 <header class="top">
     <section class="inner">
@@ -36,6 +38,7 @@
                 <nav class="sub-nav">
                     <ul>
                         <li><a href="#about">About</a></li>
+                        <li class="disabled">Portfolio</li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </nav>
@@ -46,11 +49,11 @@
             <!-- <label for="selected-categories">Filters</label> -->
             <div class="chip">
                 PHP
-                <!-- <i class="close material-icons">close</i> -->
+                <i class="close fa fa-times"></i>
             </div>                        
             <div class="chip">
                 JS
-                <!-- <i class="close material-icons">close</i> -->
+                <i class="close fa fa-times"></i>
             </div>                        
         </div>
         <nav class="portfolio-categories">
@@ -148,7 +151,7 @@
             <div class="portfolio-item">
                 
                 <div class="portfolio-image">
-                    <img src="http://lorempixel.com/100/240/people" alt="portfolio-img">
+                    <img src="http://lorempixel.com/100/240" alt="portfolio-img">
                 </div>
 
                 <div class="portfolio-categories">
@@ -247,6 +250,7 @@
                     <ul>
                         <li><a href="#about">About</a></li>
                         <li><a href="#portfolio">Portfolio</a></li>
+                        <li class="disabled">Contact</li>
                     </ul>
                 </nav>
             </h2>    
@@ -310,6 +314,29 @@
         </div>
     </section>
 </footer>
+
+<div class="overlay"></div>
+
+<div class="toast-container">
+    <div class="toast">
+        <span>Sent</span>
+    </div>
+</div>
+
+<div class="modal-container">
+    <div class="modal">
+        <div class="modal-content">
+            <h4>Modal Header</h4>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>            
+        </div>
+
+        <div class="modal-footer">
+            <a href="#" class="modal-action modal-close">OK</a>
+        </div>        
+    </div>
+</div>
+
+
 
 <script src="./bin/bundle.app.js"></script>
 </body>

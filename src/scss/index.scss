@@ -7,6 +7,10 @@
 @import 'portfolio';
 @import 'contact';
 @import 'footer';
+@import 'back';
+@import 'overlay';
+@import 'toasts';
+@import 'modals';
 // @import '../../node_modules/font-awesome/scss/font-awesome';
 
 body {
@@ -52,6 +56,12 @@ h2 nav.sub-nav {
     li {
         display: inline-block;
         margin-left: 1em;
+    }
+
+    li.disabled {
+        // color: #9e9e9e;
+        // color: hsl(0,0%,62%) !important;
+        color: rgba(158, 158, 158, 0.5);
     }
 
     a {
@@ -125,10 +135,3 @@ section.container {
         @include span-columns(12);
     }
 }
-
-.back-to-top {
-    float: right;
-    margin-top: 4rem;
-    font-size: 0.8rem;
-}
-

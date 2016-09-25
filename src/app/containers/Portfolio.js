@@ -49,7 +49,7 @@ class Portfolio extends Component {
                     { projects.map((project,index) => {
                         return <PortfolioCard key={ index }
                                               name={ project.title } 
-                                              categories={ project.field_technology_category.split(',') } 
+                                              categories={ project.field_technology_categories.split(',') } 
                                               description={ project.field_description }
                                               actions={ project.field_actions.split(',') } />
                     })}

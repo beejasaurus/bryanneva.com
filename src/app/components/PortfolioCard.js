@@ -16,13 +16,14 @@ class PortfolioCard extends Component {
                     <img src="http://lorempixel.com/100/240/nature" alt="portfolio-img" />
                 </div>
                 
-                <div className="portfolio-categories">
-                    { categories.map((category,index) => {return <Chip name={category} key={index} />})}
-                </div>
-
                 <div className="portfolio-header">
                     <h3 onClick={ this.props.onClick.bind(this,id) }>{name}</h3>
                 </div>                
+
+                <div className="portfolio-categories">
+                    { categories.map((category,index) => {return <Chip name={category} key={index} id={index} />})}
+                </div>
+
                 <div className="portfolio-description">
                     <p>
                         {description}

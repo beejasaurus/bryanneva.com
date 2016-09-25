@@ -8,28 +8,29 @@ import Chip from './Chip';
 
 class PortfolioCard extends Component {
     render() {
+        const { categories, id, name, description, actions } = this.props;
         return (
             <div className="portfolio-item">
                     
                 <div className="portfolio-image">
-                    <img src="http://lorempixel.com/100/240/" alt="portfolio-img" />
+                    <img src="http://lorempixel.com/100/240/nature" alt="portfolio-img" />
                 </div>
+                
                 <div className="portfolio-categories">
-                    { this.props.categories.map((category,index) => {
-                        return <Chip name={category} key={index} />
-                    })}
+                    { categories.map((category,index) => {return <Chip name={category} key={index} />})}
                 </div>
+
                 <div className="portfolio-header">
-                    <h3 onClick={ this.props.onClick }>{ this.props.name }</h3>
+                    <h3 onClick={ this.props.onClick.bind(this,id) }>{name}</h3>
                 </div>                
                 <div className="portfolio-description">
                     <p>
-                        { this.props.description}
+                        {description}
                     </p>
                 </div>
                 <div className="portfolio-actions">
                     <ul>
-                        { this.props.actions.map((action,index) => {
+                        { actions.map((action,index) => {
                             return <li key={index}><a href="#">{ action }</a></li>
                         })}
                     </ul>

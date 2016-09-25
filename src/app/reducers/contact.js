@@ -34,11 +34,14 @@ const contact = (state = { sending: false, toasts: [], status: '', name: '', ema
             return Object.assign({}, state, {
                 sending: false,
                 status: action.json,
-                toasts: [...state.toasts, action.json]
+                toasts: [...state.toasts, action.json],
+                name: '',
+                email: '',
+                message: '',
             });
         case REMOVE_TOAST:
             return Object.assign({}, state, {
-                toasts: [...state.toasts.splice(1)]
+                toasts: [...state.toasts.splice(1)],
             });
         default:
             return state;

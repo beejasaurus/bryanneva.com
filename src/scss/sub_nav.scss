@@ -13,7 +13,7 @@ h2 nav.sub-nav {
         margin-left: 1em;
     }
 
-    li.disabled {
+    li.disabled, li.disabled a {
         color: rgba(158, 158, 158, 0.5);
     }
 

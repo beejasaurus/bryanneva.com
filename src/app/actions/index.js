@@ -83,9 +83,11 @@ export function fetchCategories() {
 export function openProject(id){
     return [{
         type: OPEN_PROJECT,
-        id
+        id,
     },{
-        type: OPEN_MODAL
+        type: OPEN_MODAL,
+        reducer: 'portfolio',
+        id,
     }];
 }
 

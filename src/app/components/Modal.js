@@ -6,12 +6,12 @@ import React, { Component, PropTypes } from 'react';
 
 class Modal extends Component {
     render() {
-        const { title, onDismiss } = this.props;
+        const { title, body, onDismiss } = this.props;
         return (
             <div className="modal">
                 <div className="modal-content">
                     <h4>{title}</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>            
+                    <p>{body}</p>            
                 </div>
 
                 <div className="modal-footer">

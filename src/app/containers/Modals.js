@@ -12,19 +12,24 @@ import Overlay from '../components/Overlay';
 
 class Modals extends Component {
     render() {
-        const classes = this.props.open ? 'modal-container active' : 'modal-container'
+        const { open, data } = this.props;
+        const classes = open ? 'modal-container active' : 'modal-container'
+
         return (
             <div className={classes}>
                 <Overlay active={true} onClick={ this.props.onDismiss } />
-                <Modal title="Foo" onDismiss={ this.props.onDismiss } />
+                <Modal title={ data.title } body={ data.field_description } onDismiss={ this.props.onDismiss } />
             </div>
         )
     }
 }
 
 const mapStateToProps = (state) => {
+    const data = state.modal.reducer ? state[state.modal.reducer].selected : false;
+
     return {
         open: state.modal.open,
+        data: data
     }
 }
 

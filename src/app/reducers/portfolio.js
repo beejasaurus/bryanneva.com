@@ -16,8 +16,7 @@ const portfolio = (state = {
     fetching: false, 
     projects: [], 
     categories: [], 
-    selectedProject: false, 
-    modal: false, 
+    selected: false, 
     filters: [] }, action) => {
     
     switch (action.type) {
@@ -50,13 +49,13 @@ const portfolio = (state = {
             });
 
             return Object.assign({}, state, {
+                selected: false,
                 filters: reducedFilter,
             });
 
         case OPEN_PROJECT:
             return Object.assign({}, state, {
-                selectedProject: action.id,
-                modal: true,
+                selected: state.projects[action.id],
             });
         default:
             return state;

@@ -34,14 +34,18 @@ class Textarea extends Component {
     }
 
     render() {
+        const { name, value } = this.props;
+        const { label_active } = this.state;
+        
         return (
             <div className="input-field textarea">
-                <textarea name={ this.props.name.toLowerCase() } 
-                          id={ this.props.name.toLowerCase() } 
+                <textarea name={ name.toLowerCase() } 
+                          id={ name.toLowerCase() } 
+                          value={ value }
                           onFocus={this.onFocus.bind(this)} 
                           onBlur={this.onBlur.bind(this)}
                           onChange={this.handleTextChange.bind(this)}></textarea>
-                <label className={ this.state.label_active } htmlFor={ this.props.name.toLowerCase() }>{ this.props.name }</label>
+                <label className={ label_active } htmlFor={ name.toLowerCase() }>{ name }</label>
             </div>
         );        
     }

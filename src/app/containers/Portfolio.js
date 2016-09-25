@@ -52,6 +52,7 @@ class Portfolio extends Component {
                         return project.field_technology_categories.split(',').every(category => filters.indexOf(category) > -1);
                     }).map((project,index) => {
                         return <PortfolioCard key={ index }
+                                              id={ index }
                                               name={ project.title } 
                                               categories={ project.field_technology_categories.split(',') } 
                                               description={ project.field_description }
@@ -84,8 +85,8 @@ const mapDispatchToProps = (dispatch) => {
             store.dispatch(deselectProjectFilter(filter));
         },
 
-        onSelectProject: () => {
-            store.dispatch(openProject(1));
+        onSelectProject: (id) => {
+            store.dispatch(openProject(id));
         },
     }
 }

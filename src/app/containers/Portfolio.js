@@ -56,7 +56,7 @@ class Portfolio extends Component {
                                               id={ index }
                                               name={ project.title } 
                                               categories={ project.field_technology_categories.split(',') } 
-                                              description={ project.field_description }
+                                              description={ project.field_brief_description }
                                               actions={ project.field_actions.split(',') }
                                               onClick={ onSelectProject } />
                     })}

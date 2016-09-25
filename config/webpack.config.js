@@ -1,6 +1,6 @@
 var bourbon = require('bourbon').includePaths;
 var neat = require('bourbon-neat').includePaths
-var refills = require('node-refills').includePaths
+// var refills = require('node-refills').includePaths
 // require("font-awesome-webpack");
 
 module.exports = {
@@ -28,7 +28,7 @@ module.exports = {
                 loader: "handlebars-loader"
             },{
                 test: /\.scss$/,
-                loader: 'style!css!resolve-url!sass?includePaths[]=' + bourbon + '&includePaths[]=' + neat + '&includePaths[]=' + refills
+                loader: 'style!css!resolve-url!sass?includePaths[]=' + bourbon + '&includePaths[]=' + neat
             },{
                 test: /\.css$/,
                 loader: 'style!css'

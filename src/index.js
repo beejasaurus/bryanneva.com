@@ -1,6 +1,21 @@
 import $ from 'jquery';
 import './scss/index.scss';
 
+$.ajax({
+    url: '/headless/portfolio',
+    type: 'GET',
+})
+.done(function(data) {
+    console.log("success",data);
+})
+.fail(function() {
+    console.log("error");
+})
+.always(function() {
+    console.log("complete");
+});
+
+
 $('input, textarea').focus((e) => {
     const $this = $(e.currentTarget);
     const $label = $this.parent().find('label');

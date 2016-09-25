@@ -63,23 +63,27 @@ section.portfolio-items {
         right: 0;
     }
 
-    div.portfolio-categories {
-        float: right;
-        margin-top: 2rem;
-        margin-right: 1rem;
-    }
+    
 
     div.portfolio-header {
-        padding: 1em;
+        padding: 1em 0 0 1em;
         margin: 0;
         
         h3 {
             cursor: pointer;
         }    
     }
+
+    div.portfolio-categories {
+        // float: right;
+        // margin-top: 2rem;
+        // margin-right: 1rem;
+        margin-left: 1rem;
+    }
     
     div.portfolio-description {
-        padding: 1rem;
+        padding-left: 1rem;
+        clear:both;
         // padding-right: $imgPadding;
     }
     

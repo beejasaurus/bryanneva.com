@@ -41,7 +41,7 @@ class Contact extends Component {
                     <Button submit={true} name="Send" data={data} onClick={onSend} />
                 </section>
 
-                <section>&nbsp;</section>
+                <section>{'\u00a0'}</section>
                 
                 <AboutMe />
             </section>

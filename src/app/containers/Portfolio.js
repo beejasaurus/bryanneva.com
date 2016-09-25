@@ -16,13 +16,9 @@ import PortfolioCategoryFilter from '../components/PortfolioCategoryFilter';
 
 class Portfolio extends Component {
     render() {
-        const { onSelect,onDeselect,filters,projects } = this.props;
+        const { onSelect, onDeselect, filters, projects, categories } = this.props;
         const categoryFilters = ['PHP','JavaScript','Design','MySQL'];
-        // const projects = [
-        //     { name: 'Project title 1', categories: ['PHP','JS'], description: 'Foo bar baz', actions: ['Site','Code']},
-        //     { name: 'Project title 2', categories: ['PHP','MySQL'], description: 'Foo bar baz', actions: ['Code','Screenshot']}
-        // ]
-        
+                console.log('- Portfolio',categories);
         return (
             <section className="portfolio" id="portfolio">
                 <SectionHeader name="Portfolio" />
@@ -34,11 +30,11 @@ class Portfolio extends Component {
 
                 <nav className="portfolio-categories">
                     <ul>
-                        { categoryFilters.map((category,index) => {
+                        { categories.map((category,index) => {
                             const active = filters.indexOf(index) !== -1;
                             return <PortfolioCategoryFilter key={ index } 
                                                             category_id={index} 
-                                                            name={ category } 
+                                                            name={ category.name } 
                                                             active={ active ? 'active' : '' } 
                                                             onClick={ active ? onDeselect : onSelect } />
                         })}
@@ -63,6 +59,7 @@ const mapStateToProps = (state) => {
     return {
         fetching: state.portfolio.fetching,
         projects: state.portfolio.projects,
+        categories: state.portfolio.categories,
         filters: state.portfolio.filters,
         selectedProject: state.portfolio.selectedProject,
     }

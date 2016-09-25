@@ -54,7 +54,7 @@
   "scripts": {
     "build": "cd ./config && webpack --debug --progress --colors",
     "clean": "rimraf ./bin/*",
-    "deploy": "rimraf node_modules && npm install && npm run clean && npm run build",
+    "deploy": "npm install && npm run clean && npm run build",
     "start": "npm run watch",
     "watch": "cd ./config && webpack --debug --progress --colors --watch"
   },

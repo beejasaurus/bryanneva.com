@@ -1,28 +1,29 @@
 .toast-container {
     // display: none;
     
+    position: fixed;
+    z-index: 1;
+    right: 5%;
+    bottom: 30px;
 
     .toast {
-        display: none;
+        // display: none;
         // visibility: hidden;
         -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-        animation: fadeIn 0.5s, fadeout 0.5s .5s;
+        // transform: translateY(-140%);
+        animation: fadeIn 0.5s, fadeout 0.5s .5s;        
         // @include transition(all 600ms caesar(linear))
-
         // background-color: $accentColor;
         background-color: #323232;
         height: 48px;
         min-width: 250px;
         margin-left: -125px;
         color: #fff;
-        // text-align: center;
+        text-align: center;
         text-align: left;
         border-radius: 2px;
         padding: 16px;
-        position: fixed;
-        z-index: 1;
-        right: 05%;
-        bottom: 30px
+        margin-bottom: 1em;
     }    
 
     .toast.show {}

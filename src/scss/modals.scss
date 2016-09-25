@@ -1,6 +1,13 @@
-.modal-container {    
+.modal-container {
     display: none;
+}
 
+.modal-container.active {
+    display: block;
+}
+
+.modal-container {    
+    
     .modal {    
         z-index: 1000;
         display: block;

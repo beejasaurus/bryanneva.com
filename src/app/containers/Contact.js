@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { store } from '../store';
 
 // App
-import { openProject } from '../actions';
+import { editName, editEmail, editMessage, sendMessage } from '../actions';
 import SectionHeader from '../components/SectionHeader';
 import TextInput from '../components/TextInput';
 import Textarea from '../components/Textarea';
@@ -14,18 +14,31 @@ import AboutMe from './AboutMe';
 // Style
 import '../../scss/contact.scss';
 
-export default class Contact extends Component {
+class Contact extends Component {
     render() {
 
+        const { 
+            name, 
+            email, 
+            message, 
+            data, 
+            sending, 
+            status, 
+            onChangeName, 
+            onChangeEmail, 
+            onChangeMessage, 
+            onSend, 
+        } = this.props;
+        
         return (
             <section className="contact" id="contact">
                 <SectionHeader name="Contact" />    
 
                 <section>
-                    <TextInput name="Name" />
-                    <TextInput name="Email" />
-                    <Textarea name="Message" />
-                    <Button submit={true} name="Send" />
+                    <TextInput name="Name" value={name} onChange={onChangeName} />
+                    <TextInput name="Email" value={email} onChange={onChangeEmail} />
+                    <Textarea name="Message" value={message} onChange={onChangeMessage} />
+                    <Button submit={true} name="Send" data={data} onClick={onSend} />
                 </section>
 
                 <section>&nbsp;</section>
@@ -35,3 +48,41 @@ export default class Contact extends Component {
         )
     }
 }
+
+
+const mapStateToProps = (state) => {
+    return {
+        name: state.contact.name,
+        email: state.contact.email,
+        message: state.contact.message,
+        sending: state.contact.sending,
+        status: state.contact.status,
+        data: {
+            name: state.contact.name,
+            email: state.contact.email,
+            message: state.contact.message,
+        },
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        onChangeName: (text) => {
+            store.dispatch(editName(text));
+        },
+
+        onChangeEmail: (text) => {
+            store.dispatch(editEmail(text));
+        },
+
+        onChangeMessage: (text) => {
+            store.dispatch(editMessage(text));
+        },
+
+        onSend: (data) => {
+            store.dispatch(sendMessage(data));
+        },
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Contact);

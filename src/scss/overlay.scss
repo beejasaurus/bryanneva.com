@@ -1,5 +1,5 @@
 .overlay {
-    display:none;
+    display: none;
     height: 100%;
     width: 100%;
     position: fixed;
@@ -10,4 +10,8 @@
     background-color: rgba(0,0,0,0.9) !important;
     overflow-x: hidden;
     transition: 0.5s
+}
+
+.overlay.active {
+    display: block;
 }

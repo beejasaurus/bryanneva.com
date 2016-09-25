@@ -12,7 +12,7 @@ class PortfolioCard extends Component {
             <div className="portfolio-item">
                     
                 <div className="portfolio-image">
-                    <img src="http://lorempixel.com/100/240/nature/6/" alt="portfolio-img" />
+                    <img src="http://lorempixel.com/100/240/" alt="portfolio-img" />
                 </div>
                 <div className="portfolio-categories">
                     { this.props.categories.map((category,index) => {
@@ -20,7 +20,7 @@ class PortfolioCard extends Component {
                     })}
                 </div>
                 <div className="portfolio-header">
-                    <h3>{ this.props.name }</h3>
+                    <h3 onClick={ this.props.onClick }>{ this.props.name }</h3>
                 </div>                
                 <div className="portfolio-description">
                     <p>
@@ -44,6 +44,7 @@ PortfolioCard.propTypes = {
     name: PropTypes.string.isRequired,
     categories: PropTypes.array,
     description: PropTypes.string,
+    onClick: PropTypes.func,
 }
 
 export default PortfolioCard;

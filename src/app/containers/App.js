@@ -8,6 +8,8 @@ import { openProject } from '../actions';
 import Portfolio from './Portfolio';
 import Contact from './Contact';
 import BackToTop from '../components/BackToTop';
+import Toasts from './Toasts';
+import Modals from './Modals';
 
 export default class App extends Component {
     render() {
@@ -16,8 +18,10 @@ export default class App extends Component {
             <section className="container">
                 <Portfolio />
                 <BackToTop />
-                <Contact />
+                <Contact />                
                 <BackToTop />
+                <Toasts />
+                <Modals />
             </section>
         )
     }

@@ -16,7 +16,7 @@ import PortfolioCategoryFilter from '../components/PortfolioCategoryFilter';
 
 class Portfolio extends Component {
     render() {
-        const { onSelect, onDeselect, filters, projects, categories } = this.props;
+        const { onSelect, onDeselect, onSelectProject, filters, projects, categories } = this.props;
         const categoryFilters = ['PHP','JavaScript','Design','MySQL'];
                 console.log('- Portfolio',categories);
         return (
@@ -47,7 +47,8 @@ class Portfolio extends Component {
                                               name={ project.title } 
                                               categories={ project.field_technology_categories.split(',') } 
                                               description={ project.field_description }
-                                              actions={ project.field_actions.split(',') } />
+                                              actions={ project.field_actions.split(',') }
+                                              onClick={ onSelectProject } />
                     })}
                 </section>
             </section>
@@ -73,7 +74,11 @@ const mapDispatchToProps = (dispatch) => {
 
         onDeselect: (id) => {
             store.dispatch(deselectProjectFilter(id));
-        }
+        },
+
+        onSelectProject: () => {
+            store.dispatch(openProject(1));
+        },
     }
 }
 

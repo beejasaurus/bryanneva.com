@@ -12,7 +12,13 @@ import {
     OPEN_PROJECT,
 } from '../actions';
 
-const portfolio = (state = { fetching: false, projects: [], categories: [], selectedProject: false, filters: [] }, action) => {
+const portfolio = (state = { 
+    fetching: false, 
+    projects: [], 
+    categories: [], 
+    selectedProject: false, 
+    modal: false, 
+    filters: [] }, action) => {
     
     switch (action.type) {
         case REQUEST_PROJECTS:
@@ -49,7 +55,8 @@ const portfolio = (state = { fetching: false, projects: [], categories: [], sele
 
         case OPEN_PROJECT:
             return Object.assign({}, state, {
-                selectedProject: action.id
+                selectedProject: action.id,
+                modal: true,
             });
         default:
             return state;

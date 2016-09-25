@@ -2,10 +2,10 @@
 @import 'neat';
 @import '_variables';
 
-section.contact {
+section.container {
     @include outer-container;
     
-    section { 
-        @include span-columns(4); 
+    section.portfolio, section.contact {
+        @include span-columns(12);
     }
 }

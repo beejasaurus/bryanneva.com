@@ -1,0 +1,13 @@
+@import 'bourbon';
+@import 'neat';
+@import '_variables';
+
+ul.social-icons {
+    float: right;
+}
+
+.social-icons li {
+    display: inline-block;
+    margin-right: 0.5rem;
+    font-size: 1.5rem;
+}

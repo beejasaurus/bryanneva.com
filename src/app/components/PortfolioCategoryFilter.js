@@ -15,7 +15,7 @@ class PortfolioCategoryFilter extends Component {
                    className="portfolio-category-filter" 
                    onClick={e => { 
                         e.preventDefault();
-                        onClick(category_id) 
+                        onClick(name) 
                    }}>{ name }</a>
             </li>            
         );        

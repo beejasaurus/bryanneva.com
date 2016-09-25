@@ -6,11 +6,11 @@ import React, { Component, PropTypes } from 'react';
 
 class Chip extends Component {
     render() {
-        const { dismissible } = this.props;
-        const icon = dismissible ? <i className="close fa fa-times"></i> : '';
+        const { name, dismissible, onDismiss, id } = this.props;
+        const icon = dismissible ? <i onClick={e => { onDismiss(name) }} className="close fa fa-times"></i> : '';
         return (
             <div className="chip">
-                { this.props.name }
+                { name }
                 { icon }
             </div>        
         );        
@@ -18,8 +18,10 @@ class Chip extends Component {
 }
 
 Chip.propTypes = {
+    id: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
-    dismissible: PropTypes.bool
+    dismissible: PropTypes.bool,
+    onDismiss: PropTypes.func
 }
 
 export default Chip;

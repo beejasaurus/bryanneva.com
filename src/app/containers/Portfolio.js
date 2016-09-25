@@ -17,21 +17,24 @@ import PortfolioCategoryFilter from '../components/PortfolioCategoryFilter';
 class Portfolio extends Component {
     render() {
         const { onSelect, onDeselect, onSelectProject, filters, projects, categories } = this.props;
-        const categoryFilters = ['PHP','JavaScript','Design','MySQL'];
-                console.log('- Portfolio',categories);
         return (
             <section className="portfolio" id="portfolio">
                 <SectionHeader name="Portfolio" />
                 
                 <div className="portfolio-selected-categories">
-                    <Chip name="PHP" dismissible={ true } />
-                    <Chip name="JS" dismissible={true} />                        
+                    { filters.map((filter,index) => { 
+                        return <Chip key={index}
+                                     id={index} 
+                                     name={filter} 
+                                     dismissible={true} 
+                                     onDismiss={ onDeselect } /> 
+                    })}
                 </div>
 
                 <nav className="portfolio-categories">
                     <ul>
                         { categories.map((category,index) => {
-                            const active = filters.indexOf(index) !== -1;
+                            const active = filters.indexOf(category.name) !== -1;
                             return <PortfolioCategoryFilter key={ index } 
                                                             category_id={index} 
                                                             name={ category.name } 
@@ -42,7 +45,12 @@ class Portfolio extends Component {
                 </nav>
 
                 <section className="portfolio-items">
-                    { projects.map((project,index) => {
+                    { projects.filter((project,index) => {
+                        
+                        if(filters.length === 0) return project;
+
+                        return project.field_technology_categories.split(',').every(category => filters.indexOf(category) > -1);
+                    }).map((project,index) => {
                         return <PortfolioCard key={ index }
                                               name={ project.title } 
                                               categories={ project.field_technology_categories.split(',') } 
@@ -68,12 +76,12 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        onSelect: (id) => {
-            store.dispatch(selectProjectFilter(id));            
+        onSelect: (filter) => {
+            store.dispatch(selectProjectFilter(filter));            
         },
 
-        onDeselect: (id) => {
-            store.dispatch(deselectProjectFilter(id));
+        onDeselect: (filter) => {
+            store.dispatch(deselectProjectFilter(filter));
         },
 
         onSelectProject: () => {

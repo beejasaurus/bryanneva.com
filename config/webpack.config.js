@@ -1,5 +1,6 @@
 var bourbon = require('bourbon').includePaths;
 var neat = require('bourbon-neat').includePaths
+require('es6-promise').polyfill();
 // var refills = require('node-refills').includePaths
 // require("font-awesome-webpack");
 

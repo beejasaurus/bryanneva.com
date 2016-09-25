@@ -27,9 +27,11 @@ $chip-margin: 5px !default;
   .close {
     cursor: pointer;
     float: right;
-    font-size: 16px;
+    // font-size: 16px;
+    font-size: 12px;
     line-height: 32px;
     padding-left: 8px;
+    font-weight: lighter;
   }
 }
 

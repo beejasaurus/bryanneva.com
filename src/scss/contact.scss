@@ -36,9 +36,14 @@ section.contact {
             float: right;
         }
 
+        ul {
+            float: right;
+        }
+
         li {
             display: inline-block;
-            margin-right: 2em;
+            margin-right: 0.5rem;
+            font-size: 1.5rem;
         }
     }
 }

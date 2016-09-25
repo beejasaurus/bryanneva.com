@@ -21,6 +21,16 @@ footer.bottom {
                 @include span-columns(4);
             }
 
+            ul.footer-social li {
+                display: inline-block;
+                margin-right: 0.5rem;
+                font-size: 1.5rem;
+            }
+
+            a {
+                color: $white;                
+            }
+
             li {
                 margin-top: 1rem;
             }
@@ -40,6 +50,8 @@ footer.bottom {
             div.social {
                 float:right;
             }    
+
+            
         }       
     }
 }

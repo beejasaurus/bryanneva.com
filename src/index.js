@@ -2,7 +2,7 @@ import $ from 'jquery';
 import './scss/index.scss';
 
 $.ajax({
-    url: '/headless/portfolio',
+    url: '/api/portfolio',
     type: 'GET',
 })
 .done(function(data) {

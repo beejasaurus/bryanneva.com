@@ -8,4 +8,8 @@ section.contact {
     section { 
         @include span-columns(4); 
     }
+
+    section.about-me {
+        @include shift(4)
+    }
 }

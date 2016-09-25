@@ -40,8 +40,6 @@ class Contact extends Component {
                     <Textarea name="Message" value={message} onChange={onChangeMessage} />
                     <Button submit={true} name="Send" data={data} onClick={onSend} />
                 </section>
-
-                <section>{'\u00a0'}</section>
                 
                 <AboutMe />
             </section>

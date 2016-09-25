@@ -48,8 +48,9 @@ class Portfolio extends Component {
                     { projects.filter((project,index) => {
                         
                         if(filters.length === 0) return project;
+                        
+                        return project.field_technology_categories.split(',').some(category => filters.indexOf(category) > -1);
 
-                        return project.field_technology_categories.split(',').every(category => filters.indexOf(category) > -1);
                     }).map((project,index) => {
                         return <PortfolioCard key={ index }
                                               id={ index }

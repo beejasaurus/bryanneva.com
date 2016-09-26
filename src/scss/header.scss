@@ -37,6 +37,12 @@ header.top {
                     padding-bottom: 2px;
                     margin-bottom: 2px;
                 }
+
+                @include media($tablet) {
+                    border-bottom: none;
+                    padding-bottom: 2px;
+                    margin-bottom: 2px;
+                }
             }
 
             div.social {

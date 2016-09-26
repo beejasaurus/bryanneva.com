@@ -4,6 +4,7 @@
 @import 'mobile';
 
 section.contact {
+    @include outer-container;
     
     @include media($mobile) {
         margin-bottom: 6rem;
@@ -17,7 +18,7 @@ section.contact {
         @include span-columns(4); 
 
         @include media($mobile) {
-            @include span-columns(12);
+            @include span-columns(4);
             padding: 1em;
         }
 
@@ -28,7 +29,7 @@ section.contact {
     }
 
     section.about-me {
-        @include shift(4);
+        // @include shift(4);
         
         @include media($mobile) {
             @include shift(0);

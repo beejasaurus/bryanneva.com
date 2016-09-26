@@ -33,3 +33,19 @@ ul {
     padding: 0;
     margin: 0;
 }
+
+a.btn {
+    @include media($mobile) {
+        width: 100%;
+        height: 60px;
+        line-height: 60px;
+        font-size: 1.5rem;
+    }
+
+    @include media($tablet) {
+        width: 100%;
+        height: 60px;
+        line-height: 60px;
+        font-size: 1.5rem;
+    }
+}

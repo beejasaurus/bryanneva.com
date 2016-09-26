@@ -1,13 +1,14 @@
+@import 'mobile';
 @import 'bourbon';
 @import 'neat';
-@import '_variables';
+@import 'variables';
 
 header.top {
     background-color: $backgroundColorLight;    
 
     .inner {
         @include outer-container;
-
+        
         nav.page-nav, div.header-content {
             @include span-columns(12)
         }
@@ -18,8 +19,8 @@ header.top {
             
             div.header-text-container {
                 position: absolute;
-                // right: 5%;
-                right: 0;
+                right: 5%;
+                // right: 0;
                 bottom: 10%;
                 color: $white;
             }
@@ -30,17 +31,31 @@ header.top {
                 border-bottom: 1px solid $white;
                 padding-bottom: 10px;
                 margin-bottom: 10px;
+
+                @include media($mobile) {
+                    border-bottom: none;
+                    padding-bottom: 2px;
+                    margin-bottom: 2px;
+                }
             }
 
             div.social {
-                // float:right;
                 width: 100%;
                 text-align: center;
                 font-weight: 900;
                 text-transform: uppercase;
-                // padding-top: 1em;
+
+                @include media($mobile) {
+                    text-align:left;
+                    font-size: 1.5rem;
+                }
+
+                @include media($tablet) {
+                    text-align:left;
+                    font-size: 1.5rem;
+                }
             }    
-        }       
+        }  
     }
 }
 

@@ -1,15 +1,41 @@
 @import 'bourbon';
 @import 'neat';
-@import '_variables';
+@import 'variables';
+@import 'mobile';
 
 section.contact {
-    @include outer-container;
     
+    @include media($mobile) {
+        margin-bottom: 6rem;
+    }
+
+    @include media($tablet) {
+        margin-bottom: 6rem;
+    }
+
     section { 
         @include span-columns(4); 
+
+        @include media($mobile) {
+            @include span-columns(12);
+            padding: 1em;
+        }
+
+        @include media($tablet) {
+            @include span-columns(4);
+            padding: 1em;
+        }
     }
 
     section.about-me {
-        @include shift(4)
-    }
+        @include shift(4);
+        
+        @include media($mobile) {
+            @include shift(0);
+        }
+
+        @include media($tablet) {
+            @include shift(0);
+        }
+    }    
 }

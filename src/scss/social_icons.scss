@@ -1,13 +1,34 @@
 @import 'bourbon';
 @import 'neat';
-@import '_variables';
+@import 'variables';
+@import 'mobile';
+
 
 ul.social-icons {
     float: right;
+    @include media($mobile) {
+        float: none;
+        text-align: center;
+    }
+
+    @include media($tablet) {
+        float: none;
+        text-align: center;
+    }
 }
 
 .social-icons li {
     display: inline-block;
     margin-right: 0.5rem;
     font-size: 1.5rem;
+
+    @include media($mobile) {
+        font-size: 3rem;
+        margin: 2rem;
+    }
+
+    @include media($tablet) {
+        font-size: 2rem;
+        margin: 1rem;
+    }
 }

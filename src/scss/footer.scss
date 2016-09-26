@@ -1,13 +1,21 @@
 @import 'bourbon';
 @import 'neat';
-@import '_variables';
+@import 'variables';
+@import 'mobile';
 
 footer.bottom {
     background-color: $black;    
     margin-top: 5em;
     padding-top: 3em;
     
+    @include media($mobile) {
+        padding: 1rem;
+    }
 
+    @include media($tablet) {
+        padding: 1rem;
+    }
+    
     .inner {
         @include outer-container;
 
@@ -19,12 +27,33 @@ footer.bottom {
             
             div.left-pad, nav.footer-page-nav, ul.footer-social {
                 @include span-columns(4);
+
+                @include media($mobile) {
+                    @include span-columns(12)
+                    text-align: center;
+                }
+
+                @include media($tablet) {
+                    @include span-columns(4)
+                    text-align: center;
+                    font-size: 1.2rem;
+                }
             }
 
             ul.footer-social li {
                 display: inline-block;
                 margin-right: 0.5rem;
                 font-size: 1.5rem;
+
+                @include media($mobile) {
+                    font-size: 3rem;
+                    margin: 2rem;
+                }
+
+                @include media($tablet) {
+                    font-size: 2rem;
+                    margin: 1rem;
+                }
             }
 
             a {
@@ -49,9 +78,7 @@ footer.bottom {
 
             div.social {
                 float:right;
-            }    
-
-            
+            }                
         }       
     }
 }

@@ -1,8 +1,9 @@
 @charset "UTF-8";
+@import 'variables';
 @import 'bourbon';
 @import 'neat';
-@import '_variables';
-// @import 'forms';
+@import 'mobile';
+@import 'typography';
 @import 'header';
 @import 'page_nav';
 @import 'portfolio';
@@ -11,47 +12,20 @@
 @import 'toasts';
 @import 'modals';
 
-body {
-    // color: $black;    
-    color: rgba(0,0,0,0.71);
-    font-family: 'Open Sans', 'Roboto', sans-serif;
-}
 
-h1, h2, h3, h4, h5 {
-    font-family: 'Raleway', 'Helvetica Neue', 'Helvetica',' Arial', sans-serif;
-    color: $black;
-}
+section.container {
+    @include media($mobile) {
+        padding: 1em;
+    }
 
-h1 {
-    font-size: 3rem;
-    color: $whiteLight;
-}
-
-h1, h2 {    
-    font-weight: lighter;
-    text-transform: uppercase;
-}
-
-h2 {
-    // text-align: center;
-    font-size: 2.5em;
-    margin: 0;
-    // border-top: 3px double $baseColorLight;
+    @include media($tablet) {
+        padding: 1em;
+    }
 }
 
 section.container header {
     padding-top: 1em;
     margin-bottom: 2em;
-}
-
-a {
-    color: $baseColor;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-a:hover {
-    color: $baseColorDark;
 }
 
 ul {

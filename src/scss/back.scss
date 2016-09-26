@@ -1,6 +1,7 @@
 @import 'bourbon';
 @import 'neat';
-@import '_variables';
+@import 'variables';
+@import 'mobile';
 
 .back-to-top {
     float: right;
@@ -8,6 +9,18 @@
     margin-bottom: 5rem;
     font-size: 0.7rem;
     font-weight: lighter;
+
+    @include media($mobile) {
+        float: none;
+        text-align: center;
+        font-size: 1.5rem;
+    }
+
+    @include media($tablet) {
+        float: none;
+        text-align: center;
+        font-size: 1rem;
+    }
 
     a {
         font-color: $baseColorLight;

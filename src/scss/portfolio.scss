@@ -1,14 +1,28 @@
 @import 'bourbon';
 @import 'neat';
-@import '_variables';
+@import 'variables';
 @import 'chips';
+@import 'mobile';
 
 section.portfolio {
-    @include outer-container;
+    // @include outer-container;
     
     padding-top: 3em;
 
+    @include media($mobile) {
+        margin-bottom: 6rem;
+    }
+
+    @include media($tablet) {
+        margin-bottom: 6rem;
+    }
+
     div.portfolio-selected-categories {
+
+        @include media($mobile) {
+            display: none;
+        }
+
         float: right;
         clear:both;
         min-height: 37px;
@@ -18,6 +32,10 @@ section.portfolio {
     nav.portfolio-categories { 
         @include span-columns(3); 
         clear:both;
+
+        @include media($mobile) {
+            display: none;
+        }
 
         li {
             padding-left: 20px;
@@ -38,11 +56,14 @@ section.portfolio {
     
     section {
         @include span-columns(9);
+
+        @include media($mobile) {
+            @include span-columns(4);
+        }        
     }
 }
 
 section.portfolio-items {
-    @include outer-container;
     $imgPadding: 100px;
 
     div.portfolio-item {
@@ -56,11 +77,28 @@ section.portfolio-items {
         border-radius: 2px;
         position: relative;
         padding-right: $imgPadding;
+
+        @include media($mobile) {
+            width: 100%;
+            // width: 50% !important;
+            // @include span-columns(4);
+            // float: none;
+            // margin: 1em;
+        }
+
+        @include media($tablet) {
+            width: 98%;
+            // @include span-columns(4);
+        }
     }
 
     div.portfolio-image {
         position: absolute;
         right: 0;
+
+        @include media($mobile) {
+            display: none;
+        }
     }
 
     
@@ -95,6 +133,14 @@ section.portfolio-items {
         // width: 100%;
         width: 328.59px;
         // color: $white;
+        
+        @include media($mobile) {
+            width: 85%;
+        }
+
+        @include media($tablet) {
+            width: 85%;
+        }
         
         ul {
             list-style-type: none;
